@@ -73,7 +73,7 @@ async def ws():
 @app.route("/")
 async def chat():
     redis = get_redis()
-    messages = [] # replace the empty list with your code
+    messages = await chat_db.get_all_messages()
     return await render_template("chat_redis.html", messages=messages)
 
 

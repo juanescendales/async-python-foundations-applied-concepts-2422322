@@ -25,7 +25,7 @@ async def astronout():
 
 
 async def main():
-    await asyncio.gather(astronout(), astronout(), astronout(), astronout())
+    await asyncio.gather(astronout())# astronout(), astronout(), astronout())
 
 
 asyncio.run(main())

@@ -30,7 +30,7 @@ class Chat:
         return messages
 
     async def get_name(self):
-        return # your code here make sure you use encoding="utf-8"
+        return await self.redis.get("room_name", encoding="utf-8")
 
 
 async def main():

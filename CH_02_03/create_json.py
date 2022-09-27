@@ -1,3 +1,4 @@
+import http
 from pprint import pprint
 import asyncio
 import json
@@ -33,6 +34,8 @@ async def main():
             b. 'python -m http.server'
         NOTE: Feel free to use CH_02_01_end.py for reference.
         """
-        data = "this is a place holder"
+        async with aiohttp.ClientSession() as session:
+            data = await asyncio.gather(*[fetch(session,url) for url in URIS])
+        write_to_file(data)
 
 asyncio.run(main())

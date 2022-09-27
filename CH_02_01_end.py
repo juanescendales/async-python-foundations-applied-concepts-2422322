@@ -6,25 +6,18 @@ import aiohttp
 import click
 
 urls = [
-    "http://httpbin.org/get?text=python",
-    "http://httpbin.org/get?text=is",
-    "http://httpbin.org/get?text=fun",
-    "http://httpbin.org/get?text=and",
-    "http://httpbin.org/get?text=useful",
-    "http://httpbin.org/get?text=you",
-    "http://httpbin.org/get?text=can",
-    "http://httpbin.org/get?text=almost",
-    "http://httpbin.org/get?text=do",
-    "http://httpbin.org/get?text=anything",
-    "http://httpbin.org/get?text=with",
-    "http://httpbin.org/get?text=it",
+    "https://4udy5hmswf.execute-api.us-east-1.amazonaws.com/Prod/clock?timezone=",
+    "https://4udy5hmswf.execute-api.us-east-1.amazonaws.com/Prod/clock?timezone=",
+    "https://4udy5hmswf.execute-api.us-east-1.amazonaws.com/Prod/clock?timezone=",
+    "https://4udy5hmswf.execute-api.us-east-1.amazonaws.com/Prod/clock?timezone=",
+    "https://4udy5hmswf.execute-api.us-east-1.amazonaws.com/Prod/clock?timezone=",
 ]
 
 
 async def fetch_args(session, url):
     async with session.get(url) as response:
         data = await response.json()
-        return data["args"]
+        return data["message"]
 
 
 async def main():
